@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Failed</title>
+    <!-- Add your CSS or link to external stylesheets here -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: darkgray;
+        }
+        .container {
+            max-width: 400px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .error-message {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+            color: red;
+        }
+        .retry-payment {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: gray;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+        .retry-payment:hover {
+            background-color: darkgray;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="error-message">
+            <p>Oops! Something went wrong with your payment.</p>
+        </div>
+        <a href="/" class="retry-payment">Back to Homepage</a>
+    </div>
+</body>
+</html>
