@@ -1,6 +1,3 @@
-ChatGPT
-
-Sure! Here's a professional and well-documented `README.md` for your MERN full-stack project called Carmania:
 
 * * * * *
 
