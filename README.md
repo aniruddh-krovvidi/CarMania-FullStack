@@ -1,10 +1,10 @@
 
 * * * * *
 
-Carmania
+CarMania
 ========
 
-Carmania is a full-stack MERN (MongoDB, Express.js, React, Node.js) web application for buying and selling cars. It includes features such as user authentication, car listings, a shopping cart, and payment integration using Stripe.
+Carmania is a full-stack MERN (MongoDB, Express.js, React, Node.js) web application for buying and selling cars. It includes features such as user authentication (jwt authentication), car listings, a shopping cart, and payment integration using Stripe and image storage using Cloudinary.
 
 Table of Contents
 -----------------
@@ -12,12 +12,10 @@ Table of Contents
 -   [Features](#features)
 -   [Tech Stack](#tech-stack)
 -   [Getting Started](#getting-started)
--   [Project Structure](#project-structure)
 -   [API Endpoints](#api-endpoints)
 -   [Usage](#usage)
--   [Deployment](#deployment)
 -   [Contributing](#contributing)
--   [License](#license)
+
 
 Features
 --------
@@ -27,9 +25,10 @@ Features
 -   Car listings with details
 -   Add to cart functionality
 -   Save car listings
--   Payment integration with Stripe
+-   Payment integration with StripeAPI
 -   Responsive design
 -   User profile management
+-   Image storage using Cloudinary
 
 Tech Stack
 ----------
@@ -44,6 +43,8 @@ Tech Stack
     -   MongoDB
 -   **Payment Integration:**
     -   Stripe
+- **Image Storage:**
+  - Cloudinary
 
 Getting Started
 ---------------
@@ -53,6 +54,7 @@ Getting Started
 -   Node.js
 -   npm or yarn
 -   MongoDB
+-   Cloudinary account
 -   Stripe account
 
 ### Installation
@@ -63,8 +65,8 @@ Getting Started
 
     Copy code
 
-    `git clone https://github.com/your-username/carmania.git
-    cd carmania`
+    `git clone https://github.com/aniruddh-krovvidi/CarMania-FullStack.git
+    cd CarMania-FullStack`
 
 2.  Install dependencies:
 
@@ -74,16 +76,16 @@ Getting Started
 
     `cd client
     npm install
-    cd ../server
+    cd ../api
     npm install`
 
-3.  Set up environment variables: Create a `.env` file in the `server` directory with the following content:
+3.  Set up environment variables: Create a `.env` file in the `api` directory with the following content:
 
     env
 
     Copy code
 
-    `MONGO_URI=your_mongodb_connection_string
+    `MONGO_URL=your_mongodb_connection_string
     JWT_SECRET_KEY=your_jwt_secret_key
     STRIPE_SECRET_KEY=your_stripe_secret_key`
 
@@ -93,41 +95,14 @@ Getting Started
 
     Copy code
 
-    `# In the server directory
-    npm run dev
+    `# In the api directory
+    node app.js
 
     # In the client directory
-    npm start`
+    npm run dev`
 
-5.  Open your browser and navigate to `http://localhost:3000`.
+5.  Open your browser and navigate to `http://localhost:5173`.
 
-Project Structure
------------------
-
-plaintext
-
-Copy code
-
-`carmania/
-├── client/
-│   ├── public/
-│   ├── src/
-│   │   ├── components/
-│   │   ├── context/
-│   │   ├── pages/
-│   │   ├── App.jsx
-│   │   ├── index.jsx
-│   │   ├── index.scss
-│   └── package.json
-├── server/
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── middlewares/
-│   ├── utils/
-│   ├── index.js
-│   └── package.json
-└── README.md`
 
 API Endpoints
 -------------
@@ -186,38 +161,6 @@ Usage
 
 -   Use the Stripe integration to securely process payments.
 
-Deployment
-----------
-
-### Frontend
-
--   Build the React app for production:
-
-    sh
-
-    Copy code
-
-    `cd client
-    npm run build`
-
-### Backend
-
--   Ensure your environment variables are set up correctly.
--   Deploy the server using a cloud provider (e.g., Heroku, AWS, DigitalOcean).
-
-### Example Deployments
-
--   **Heroku:**
-
-    sh
-
-    Copy code
-
-    `heroku create carmania
-    git push heroku main
-    heroku config:set MONGO_URI=your_mongodb_connection_string
-    heroku config:set JWT_SECRET_KEY=your_jwt_secret_key
-    heroku config:set STRIPE_SECRET_KEY=your_stripe_secret_key`
 
 Contributing
 ------------
